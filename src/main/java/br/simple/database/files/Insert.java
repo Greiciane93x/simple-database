@@ -1,12 +1,11 @@
 package br.simple.database.files;
 
 
-import br.simple.database.utils.Generic;
-
 import java.io.File;
 import java.io.FileOutputStream;
 
-import static br.simple.database.utils.DefaultManagementUtils.*;
+import static br.simple.database.utils.DefaultManagementUtils.getFile;
+import static br.simple.database.utils.DefaultManagementUtils.inputInFile;
 
 
 public class Insert {
@@ -20,7 +19,9 @@ public class Insert {
 
             if(!getFile().exists()) file.createNewFile();
 
-            writeInFile(new Generic<>(inputInFile()), fileOutputStream);
+            inputInFile();
+
+            System.out.println("Adding data... ");
 
         }catch (Exception e){
             e.getStackTrace();
