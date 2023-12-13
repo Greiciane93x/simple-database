@@ -30,14 +30,9 @@ public class Delete {
             JsonNode jsonNode = objectMapper.readTree(getFile());
 
             for(JsonNode node : jsonNode){
-
-                ((ObjectNode) node).remove("87014fef-2cf9-4e57-9956-8f59b8387fc6");
+                ((ObjectNode) node).remove("ccfeeb5e-e60c-465d-84bc-e7d8f3c1ba89");
             }
             objectMapper.writeValue(getFile(), jsonNode);
-
-
-
-
 
             System.out.println("Deleting data...");
 
