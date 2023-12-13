@@ -4,8 +4,7 @@ package br.simple.database.files;
 import java.io.File;
 import java.io.FileOutputStream;
 
-import static br.simple.database.utils.DefaultManagementUtils.getFile;
-import static br.simple.database.utils.DefaultManagementUtils.inputInFile;
+import static br.simple.database.utils.DefaultManagementUtils.*;
 
 
 public class Insert {
@@ -20,6 +19,8 @@ public class Insert {
             if(!getFile().exists()) file.createNewFile();
 
             inputInFile();
+
+          /*  writeInFile();*/
 
             System.out.println("Adding data... ");
 

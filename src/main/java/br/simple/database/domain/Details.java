@@ -1,9 +1,14 @@
 package br.simple.database.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Details {
 
+    @JsonProperty
     public String idPessoa;
+    @JsonProperty
     public String nome;
+    @JsonProperty
     public String idade;
 
     private Details(Builder builder) {
