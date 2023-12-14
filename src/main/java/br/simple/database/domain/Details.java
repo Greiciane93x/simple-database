@@ -67,4 +67,13 @@ public class Details {
             return new Details(this);
         }
     }
+
+    @Override
+    public String toString() {
+        return "Details{" +
+                "idPessoa='" + idPessoa + '\'' +
+                ", nome='" + nome + '\'' +
+                ", idade='" + idade + '\'' +
+                '}';
+    }
 }
