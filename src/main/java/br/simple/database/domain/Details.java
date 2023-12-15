@@ -1,8 +1,14 @@
 package br.simple.database.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Details {
+import java.io.Serializable;
+
+
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Details implements Serializable {
 
     @JsonProperty
     public String idPessoa;
@@ -10,6 +16,9 @@ public class Details {
     public String nome;
     @JsonProperty
     public String idade;
+
+    public Details() {
+    }
 
     private Details(Builder builder) {
         this.idPessoa = builder.idPessoa;
