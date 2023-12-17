@@ -15,27 +15,30 @@ public class DefaultManagementUtils {
     public static void inputInFile() {
 
         try {
-
-            Details personDetails1 = new Details.Builder().idPessoa(UUID.randomUUID().toString()).nome("Ane").idade("30 anos").build();
-            Details personDetails2 = new Details.Builder().idPessoa(UUID.randomUUID().toString()).nome("Alice").idade("5 anos").build();
-            Details personDetails3 = new Details.Builder().idPessoa(UUID.randomUUID().toString()).nome("Guilherme").idade("29 anos").build();
-            Details personDetails4 = new Details.Builder().idPessoa(UUID.randomUUID().toString()).nome("test").idade("29 anos").build();
-            Details personDetails5 = new Details.Builder().idPessoa(UUID.randomUUID().toString()).nome("tes2t").idade("29 anos").build();
-
-
-            Map<String, Details> map = new HashMap<>();
-
-            map.put(personDetails1.getIdPessoa(), personDetails1);
-            map.put(personDetails2.getIdPessoa(), personDetails2);
-            map.put(personDetails3.getIdPessoa(), personDetails3);
-            map.put(personDetails4.getIdPessoa(), personDetails4);
-            map.put(personDetails5.getIdPessoa(), personDetails5);
-
-
+            Map map = mockDetails();
             new ObjectMapper().writeValue(Paths.get(getFile().toString()).toFile(), map);
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+    }
+
+    private static Map mockDetails() throws IOException {
+        Details personDetails1 = new Details.Builder().idPessoa(UUID.randomUUID().toString()).nome("Ane").idade("30 anos").build();
+        Details personDetails2 = new Details.Builder().idPessoa(UUID.randomUUID().toString()).nome("Alice").idade("5 anos").build();
+        Details personDetails3 = new Details.Builder().idPessoa(UUID.randomUUID().toString()).nome("Guilherme").idade("29 anos").build();
+        Details personDetails4 = new Details.Builder().idPessoa(UUID.randomUUID().toString()).nome("test").idade("29 anos").build();
+        Details personDetails5 = new Details.Builder().idPessoa(UUID.randomUUID().toString()).nome("tes2t").idade("29 anos").build();
+
+        Map<String, Details> map = new HashMap<>();
+
+        map.put(personDetails1.getIdPessoa(), personDetails1);
+        map.put(personDetails2.getIdPessoa(), personDetails2);
+        map.put(personDetails3.getIdPessoa(), personDetails3);
+        map.put(personDetails4.getIdPessoa(), personDetails4);
+        map.put(personDetails5.getIdPessoa(), personDetails5);
+
+        return map;
 
     }
 
