@@ -1,39 +1,26 @@
 package br.simple.database.files;
 
 
-import java.io.File;
-import java.io.FileOutputStream;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.IOException;
+import java.nio.file.Paths;
+import java.util.Map;
 
 import static br.simple.database.utils.DefaultManagementUtils.*;
 
 
 public class Insert {
-    public static void main(String[] args) {
-        File file =  null;
-        FileOutputStream fileOutputStream = null;
+    public static void main(String[] args) throws IOException {
 
-        try {
+        Map content = getContent();
 
-            fileOutputStream = new FileOutputStream(getFile());
+        content.put("e7287b40-2073-470e-9a62-4444444444", mockDetails());
 
-            if(!getFile().exists()) file.createNewFile();
+        new ObjectMapper().writeValue(Paths.get(getFile().toString()).toFile(), content);
 
-            inputInFile();
+        System.out.println("** -- INSERT -- **");
 
-          /*  writeInFile();*/
 
-            System.out.println("Adding data... ");
-
-        }catch (Exception e){
-            e.getStackTrace();
-        }finally {
-            try{
-                if (fileOutputStream != null){
-                    fileOutputStream.close();
-                }
-            }catch (Exception ex){
-                ex.printStackTrace();
-            }
-        }
     }
 }
