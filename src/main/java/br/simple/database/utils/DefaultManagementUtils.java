@@ -10,8 +10,15 @@ import java.util.Map;
 public class DefaultManagementUtils {
 
 
-    public static Details mockDetails() throws IOException {
-        Details personDetails = new Details.Builder().idPessoa("e7287b40-2073-470e-9a62-4444444444").nome("Anexxxxx").idade("30 anos").build();
+
+    public static Details mockDetailsInsert() throws IOException {
+        Details personDetails = new Details.Builder().idPessoa("e7287b40-2073-470e-9a62-4444444444").nome("Ane Test - Insert").idade("30 anos").build();
+        return personDetails;
+
+    }
+
+    public static Details mockDetailsUpdate() throws IOException {
+        Details personDetails = new Details.Builder().idPessoa("e7287b40-2073-470e-9a62-4444444444").nome("Ane Update - Update").idade("30 anos").build();
         return personDetails;
 
     }
