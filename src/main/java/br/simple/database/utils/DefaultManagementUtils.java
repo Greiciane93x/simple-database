@@ -18,7 +18,7 @@ public class DefaultManagementUtils {
     }
 
     public static Details mockDetailsUpdate() throws IOException {
-        Details personDetails = new Details.Builder().idPessoa("e7287b40-2073-470e-9a62-4444444444").nome("Ane Update - Update").idade("30 anos").build();
+        Details personDetails = new Details.Builder().idPessoa("e7287b40-2073-470e-9a62-5555555555").nome("Ane Test - Update").idade("30 anos").build();
         return personDetails;
 
     }
